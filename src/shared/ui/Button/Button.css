@@ -1,0 +1,64 @@
+.react-aria-Button {
+  /* Reset & Layout */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  appearance: none;
+  border: none;
+  margin: 0;
+  text-decoration: none;
+  cursor: default;
+  user-select: none;
+
+  /* Sizing & Spacing */
+  height: var(--field-height);
+  padding: 0 var(--spacing-4);
+  gap: var(--spacing-1);
+
+  /* Typography & Visuals */
+  font-weight: 500;
+  transition: transform 75ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Touch handling */
+  -webkit-tap-highlight-color: transparent;
+
+  /* Icon Sizing */
+  & > svg {
+    width: 1.125rem; /* Equivalent to 18px (4.5 * 4px) */
+    height: 1.125rem;
+    flex-shrink: 0;
+  }
+
+  /* Icon-only Button (Circle) */
+  &:has(> svg:only-child) {
+    width: var(--field-height);
+    padding: 0;
+    flex-shrink: 0;
+  }
+
+  /* Interactive States */
+  &[data-pressed] {
+    transform: scale(0.95);
+  }
+
+  &[data-hovered] {
+    background-color: var(--color-app-hover);
+  }
+
+  /* Keyboard Shortcut Tag (kbd) */
+  & kbd {
+    margin-inline-start: var(--spacing-3);
+    padding: 0 var(--spacing-1);
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    background-color: var(--color-app-ink-10);
+    border: 0.5px solid var(--color-app-border);
+  }
+
+  /* Progress Bar Theme override */
+  .react-aria-ProgressBar {
+    @media (prefers-color-scheme: dark) {
+      --highlight-background: var(--color-app-bg-elevated);
+    }
+  }
+}

@@ -1,0 +1,43 @@
+.react-aria-TextField {
+  display: flex;
+  flex-direction: column;
+}
+
+.react-aria-Input,
+.react-aria-TextArea {
+  width: 100%;
+  min-height: var(--field-height);
+  padding: 0 var(--spacing-4);
+  box-sizing: border-box;
+  margin: 0;
+
+  border: 1px solid var(--color-app-border);
+  color: var(--color-app-text);
+  background-color: var(--color-app-bg-elevated);
+
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+
+  &::placeholder {
+    color: var(--color-app-ink-50);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-app-blue);
+    outline-offset: -1px;
+  }
+
+  &[data-disabled] {
+    color: var(--color-app-muted);
+    cursor: not-allowed;
+
+    &::placeholder {
+      color: var(--color-app-muted);
+    }
+  }
+}
+
+.react-aria-TextArea {
+  min-height: 64px;
+  padding: var(--spacing-2) var(--spacing-3);
+}

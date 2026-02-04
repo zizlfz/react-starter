@@ -1,0 +1,84 @@
+@import 'tailwindcss';
+
+@theme {
+  /* ============================================
+   * Color Tokens
+   * ============================================ */
+
+  /* Primary Colors */
+  --color-app-bg: #f7f4ed;
+  --color-app-bg-elevated: #fefefe;
+  --color-app-text: #2d2a26;
+
+  /* Accent Colors */
+  --color-app-blue: #5b7c99;
+  --color-app-blue-hover: #4a6a85;
+  --color-app-blue-light: #7a93ab;
+
+  --color-app-red: #c4675f;
+  --color-app-red-hover: #b05549;
+
+  --color-app-green: #7a9b76;
+  --color-app-gold: #d4a574;
+
+  /* Neutral Colors */
+  --color-app-border: #e8e3d6;
+  --color-app-hover: #f0ebe0;
+  --color-app-muted: #a89f8f;
+
+  /* Opacity Variants (Ink) */
+  --color-app-ink-10: rgba(45, 42, 38, 0.1);
+  --color-app-ink-20: rgba(45, 42, 38, 0.2);
+  --color-app-ink-50: rgba(45, 42, 38, 0.5);
+
+  /* ============================================
+   * Typography & Shadows
+   * ============================================ */
+
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial,
+    sans-serif;
+  --font-mono:
+    'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New',
+    monospace;
+
+  --shadow-sm: 0 1px 2px 0 rgba(45, 42, 38, 0.05);
+  --shadow-md:
+    0 4px 6px -1px rgba(45, 42, 38, 0.1), 0 2px 4px -1px rgba(45, 42, 38, 0.06);
+  --shadow-lg:
+    0 10px 15px -3px rgba(45, 42, 38, 0.1), 0 4px 6px -2px rgba(45, 42, 38, 0.05);
+
+  /* ============================================
+   * Spacing & Borders
+   * ============================================ */
+
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+
+  --border-width-sm: 1px;
+  --border-width-md: 1.5px;
+  --border-width-lg: 2px;
+
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+
+  /* Custom UI Tokens (Internal usage) */
+  --field-height: 2.5rem;
+}
+
+/* Base Styles */
+@layer base {
+  body {
+    background-color: var(--color-app-bg);
+    color: var(--color-app-text);
+    font-family: var(--font-sans);
+  }
+
+  *:focus-visible {
+    outline: 2px solid var(--color-app-blue);
+  }
+}
